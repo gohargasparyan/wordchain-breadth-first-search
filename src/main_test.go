@@ -25,3 +25,24 @@ func TestStartEndAreSameWord(t *testing.T) {
 		t.Errorf("Error actual = %v, and Expected = %v.", actual[0], expected[0])
 	}
 }
+
+func TestWordIsNotInDictionary(t *testing.T) {
+	expected := "start or end word is not in the dictionary"
+	_, actual := findShortestChain("aaaaaa", "aaaaab")
+
+	if actual == nil || actual.Error() != expected {
+		t.Errorf("Error actual = %v, and Expected = %v.", actual, expected)
+	}
+}
+
+func TestWordChain(t *testing.T) {
+	actual, err := findShortestChain("cat", "dog")
+
+	if err != nil {
+		t.Error(err)
+	}
+
+	if len(actual) != 4 {
+		t.Errorf("From cat to dog shortest chain gotta be 4")
+	}
+}
