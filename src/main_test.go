@@ -60,6 +60,10 @@ func benchmark(start, end string, b *testing.B) {
 	}
 }
 
-func BenchmarkForwards(b *testing.B)  { benchmark("lead", "gold", b) }
+func BenchmarkForwards(b *testing.B)  {
+	benchmark("lead", "gold", b)
+}
 
-func BenchmarkBackwards(b *testing.B)  {  benchmark("gold", "lead", b) }
+func BenchmarkBackwards(b *testing.B)  {
+	benchmark("gold", "lead", b)
+}
