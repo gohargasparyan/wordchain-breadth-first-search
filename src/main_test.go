@@ -46,3 +46,20 @@ func TestWordChain(t *testing.T) {
 		t.Errorf("From cat to dog shortest chain gotta be 4")
 	}
 }
+
+func Benchmark(b *testing.B) {
+	// run the Fib function b.N times
+	for n := 0; n < b.N; n++ {
+		findShortestChain("cat", "dog")
+	}
+}
+
+func benchmark(start, end string, b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		findShortestChain(start, end)
+	}
+}
+
+func BenchmarkForwards(b *testing.B)  { benchmark("lead", "gold", b) }
+
+func BenchmarkBackwards(b *testing.B)  {  benchmark("gold", "lead", b) }
