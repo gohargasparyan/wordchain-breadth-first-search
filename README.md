@@ -14,7 +14,7 @@ Please make sure you have go installed
 Clone the repo and go to wordchain-breadth-first-search/src directory
 
 ```bash
-$ git clone https://github.com/gohargasparyan/wordchain-breadth-first-search
+$ git clone git@github.com:gohargasparyan/wordchain-breadth-first-search.git
 $ cd wordchain-breadth-first-search/src
 ```
 
